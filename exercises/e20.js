@@ -7,9 +7,17 @@
 
 export function separateNamesWithAFromRest(array) {
   // Your code goes here...
-
+  let result = [[],[]];
+  for (var i=0;i<array.length;i++) {
+    let hasA = false;
+    for (var x=0;x<array[i].length;x++) {
+      if (array[i][x] === 'a') hasA = true;
+    }
+    if (hasA) result[0].push(array[i]);
+    else result[1].push(array[i])
+  }
+  return result;
 }
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-20"

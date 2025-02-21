@@ -7,10 +7,16 @@
 
 export function flatArrays(array) {
   // Your code goes here...
-
+  let result = [];
+  for (var i = 0; i < array.length; i++) {
+    if (Array.isArray(array[i])) {
+      result = result.concat(flatArrays(array[i]));     // "..." is "spread operator" and calling out a function within itself is called "recursion" 
+    } else {
+      result.push(array[i]);
+    }
+  }
+  return result;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-16"

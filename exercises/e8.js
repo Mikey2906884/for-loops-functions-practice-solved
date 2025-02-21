@@ -6,7 +6,18 @@
 
 export function getClientWithGreatestBalance(array) {
   // Your code goes here...
+  let accountNames = [];
+  let counter = -Infinity;
+  for (var i=0;i<array.length;i++) {
+    if (array[i].balance>counter) {
+      counter = array[i].balance;
+    }
+  }
+  for (var i=0;i<array.length;i++) {
+    if (array[i].balance === counter) accountNames.push(array[i]);
+  }
 
+  return accountNames;
 }
 
 
