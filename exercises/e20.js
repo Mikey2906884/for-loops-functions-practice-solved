@@ -1,4 +1,3 @@
-
 // EXERCISE 20
 // Return and array of 2 arrays
 // (1 - an array of names that contain "a" in name, 2 - an array of names that don't have 'a' in name)
@@ -7,14 +6,14 @@
 
 export function separateNamesWithAFromRest(array) {
   // Your code goes here...
-  let result = [[],[]];
-  for (var i=0;i<array.length;i++) {
+  const result = [[], []];
+  for (let element of array) {
     let hasA = false;
-    for (var x=0;x<array[i].length;x++) {
-      if (array[i][x] === 'a') hasA = true;
+    for (var x = 0; x < element.length; x++) {
+      if (element[x] === "a") hasA = true;
     }
-    if (hasA) result[0].push(array[i]);
-    else result[1].push(array[i])
+    if (hasA) result[0].push(element);
+    else result[1].push(element);
   }
   return result;
 }

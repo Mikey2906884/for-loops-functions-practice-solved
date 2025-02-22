@@ -1,4 +1,3 @@
-
 // EXERCISE 16
 // Please, read the exercise-info/flat.md to get the initial data of what is the expected result of this exercise.
 // Array example: flatArraysData in /data/data.js
@@ -7,12 +6,14 @@
 
 export function flatArrays(array) {
   // Your code goes here...
-  let result = [];
-  for (var i = 0; i < array.length; i++) {
-    if (Array.isArray(array[i])) {
-      result = result.concat(flatArrays(array[i]));     // "..." is "spread operator" and calling out a function within itself is called "recursion" 
+  const result = [];
+  for (let baseElement of array) {
+    if (typeof baseElement === "object") {
+      for (let secondElement of flatArrays(baseElement)) {
+        result.push(secondElement);
+      }
     } else {
-      result.push(array[i]);
+      result.push(baseElement);
     }
   }
   return result;

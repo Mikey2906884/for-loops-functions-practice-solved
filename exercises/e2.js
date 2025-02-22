@@ -4,9 +4,9 @@
 
 export function getNumbersWithSquareRoots(max) {
   // Your code goes here...
-  let squareRoots = [];
-  for (var i=0;i<max+1;i++) {
-    if (Math.sqrt(i)%2 === 0 || Math.sqrt(i)%2 === 1) squareRoots.push(i);
+  const squareRoots = [];
+  for (let i = 0; i * i <= max; i++) {
+    squareRoots.push(i * i);
   }
   return squareRoots;
 }

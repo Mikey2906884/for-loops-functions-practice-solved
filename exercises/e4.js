@@ -5,22 +5,20 @@
 
 export function findMinValueInArray(array) {
   // Your code goes here...
-  let counter = Infinity;
-  for (var i=0;i<array.length;i++) {
-    if (array[i]<counter) counter = array[i];
+  let counter = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < counter) counter = array[i];
   }
-
-  return counter
+  return counter;
 }
 
 export function findMaxValueInArray(array) {
   // Your code goes here...
-  let counter = -Infinity;
-  for (var i=0;i<array.length;i++) {
-    if (array[i]>counter) counter = array[i];
+  let counter = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > counter) counter = array[i];
   }
-  
-  return counter
+  return counter;
 }
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-4"
